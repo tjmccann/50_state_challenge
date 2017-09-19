@@ -5,7 +5,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 from state_data import states, states_by_num, countries
 from datetime import date
 import gspread
-from secret import account_sid, auth_token
+from secret import account_sid, auth_token, data_sheet, mainsheet, app_phnum
 
 # Session States:
 # 0 = no open session
@@ -36,26 +36,6 @@ class New_User:
 
 # Twilio API credentials from from twilio.com/console
 tw_client = Client(account_sid, auth_token)
-
-'''
-# THIS DATA POINTS TO THE **LIVE** APP SMS NUMBER AND DATA SPREADSHEETS
-# UNCOMMENT THIS SECTION (AND COMMENT NEXT SECTION) WHEN PUSHING TO PRODUCTION
-# ------------------------------------------
-data_sheet = ("50_state_data")
-mainsheet = ("First Annual 50 State Challenge")
-app_phnum = "+14159802337" 
-# ------------------------------------------
-'''
-
-
-# THIS DATA POINTS TO THE **TEST** APP SMS NUMBER AND DATA SPREADSHEETS
-# UNCOMMENT THIS SECTION (AND COMMENT PREVIOUS SECTION) WHEN BUILDING/TESTING
-# ------------------------------------------
-data_sheet = ("TEST VERSION - 50_state_data")
-mainsheet = ("TEST VERSION - 50 State Challenge") 
-app_phnum = "+12028398684"
-# ------------------------------------------
-
 
 # Define the string a user will be sent if they text "OPTIONS"
 help_string = """To enter a new beer, text the state name or abbreviation).\n
